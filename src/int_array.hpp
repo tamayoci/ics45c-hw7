@@ -45,7 +45,13 @@ public:
     }
 
     const int& operator[](int index) const {
-        // TODO Step 3: the same check as above
+        if (!in_bounds(index)) {
+            throw std::string{
+                "Exception operator[](" +
+                std::to_string(index) +
+                ") Out Of Range"
+            };
+        }
         return buf[index];
     }
 
