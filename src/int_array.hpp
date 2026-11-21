@@ -22,8 +22,14 @@ public:
         }
     }
 
-    // TODO Step 4: copy constructor
-    // TODO Step 4: move constructor
+    Array(Array&& other) noexcept
+        : len{other.len},
+        buf{other.buf} {
+
+        other.len = 0;
+        other.buf = nullptr;
+    }
+
     // TODO Step 5: friend void swap(Array& lhs, Array& rhs) noexcept
     // TODO Step 5: copy assignment
     // TODO Step 5: move assignment
