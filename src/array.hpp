@@ -63,4 +63,15 @@ public:
         return len;
     }
 
+    T& operator[](int index) {
+        if (!in_bounds(index)) {
+            throw std::string{
+                "Exception operator[](" +
+                std::to_string(index) +
+                ") Out Of Range"
+            };
+        }
+        return buf[index];
+    }
+
 }
