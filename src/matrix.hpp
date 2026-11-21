@@ -41,6 +41,15 @@ public:
         }
     }
 
+    template<typename Fn>
+    void fill_with_fn(Fn fn) {
+        for (int r = 0; r < rows; ++r) {
+            for (int c = 0; c < cols; ++c) {
+                data[r][c] = fn(r, c);
+            }
+        }
+    }
+
 }
 
 #endif
