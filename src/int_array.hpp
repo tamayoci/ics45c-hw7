@@ -34,8 +34,15 @@ public:
         std::swap(lhs.len, rhs.len);
         std::swap(lhs.buf, rhs.buf);
     }
-    
-    // TODO Step 5: copy assignment
+
+    Array& operator=(const Array& other) {
+        if (this != &other) {
+            Array temp(other);
+            swap(*this, temp);
+        }
+        return *this;
+    }
+
     // TODO Step 5: move assignment
 
     ~Array() {
