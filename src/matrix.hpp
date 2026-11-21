@@ -31,6 +31,10 @@ public:
         return rows;
     }
 
+    int num_cols() const {
+        return cols;
+    }
+
 }
 
 #endif
