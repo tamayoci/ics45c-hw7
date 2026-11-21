@@ -39,5 +39,13 @@ public:
         std::swap(lhs.len, rhs.len);
         std::swap(lhs.buf, rhs.buf);
     }
+
+    Array& operator=(const Array& other) {
+        if (this != &other) {
+            Array temp(other);
+            swap(*this, temp);
+        }
+        return *this;
+    }
     
 }
