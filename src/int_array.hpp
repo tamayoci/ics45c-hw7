@@ -34,8 +34,13 @@ public:
     }
 
     int& operator[](int index) {
-        // TODO Step 3: throw std::string when the index is out of bounds:
-        //     "Exception operator[](" + std::to_string(index) + ") Out Of Range"
+        if (!in_bounds(index)) {
+            throw std::string{
+                "Exception operator[](" +
+                std::to_string(index) +
+                ") Out Of Range"
+            };
+        }
         return buf[index];
     }
 
@@ -61,7 +66,6 @@ private:
 
 inline std::ostream& operator<<(std::ostream& out, const Array& array) {
     std::stringstream temp;
-    // We don't want to set formatting flags globally.
     temp << std::setprecision(2) << std::fixed << std::right;
 
     for (int i = 0; i < array.length(); ++i) {
