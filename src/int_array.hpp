@@ -43,8 +43,13 @@ public:
         return *this;
     }
 
-    // TODO Step 5: move assignment
-
+    Array& operator=(Array&& other) noexcept {
+        if (this != &other) {
+            swap(*this, other);
+        }
+        return *this;
+    }
+    
     ~Array() {
         delete[] buf;
     }
