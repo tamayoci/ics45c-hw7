@@ -35,5 +35,9 @@ public:
         other.buf = nullptr;
     }
 
-
+    friend void swap(Array& lhs, Array& rhs) noexcept {
+        std::swap(lhs.len, rhs.len);
+        std::swap(lhs.buf, rhs.buf);
+    }
+    
 }
