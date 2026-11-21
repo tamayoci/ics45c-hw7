@@ -28,7 +28,12 @@ public:
         }
     }
 
-    
+    Array(Array&& other) noexcept
+        : len{other.len},
+        buf{other.buf} {
+        other.len = 0;
+        other.buf = nullptr;
+    }
 
 
 }
