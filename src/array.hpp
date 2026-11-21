@@ -55,4 +55,12 @@ public:
         return *this;
     }
 
+    ~Array() {
+        delete[] buf;
+    }
+
+    int length() const {
+        return len;
+    }
+
 }
