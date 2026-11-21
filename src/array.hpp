@@ -91,5 +91,13 @@ public:
             buf[i] = fn(i);
         }
     }
+    
+private:
+    int len;
+    T* buf;
 
-}
+    bool in_bounds(int index) const {
+        return index >= 0 && index < len;
+    }
+};
+
