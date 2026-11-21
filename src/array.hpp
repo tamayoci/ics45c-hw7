@@ -74,4 +74,15 @@ public:
         return buf[index];
     }
 
+    const T& operator[](int index) const {
+        if (!in_bounds(index)) {
+            throw std::string{
+                "Exception operator[](" +
+                std::to_string(index) +
+                ") Out Of Range"
+            };
+        }
+        return buf[index];
+    }
+
 }
