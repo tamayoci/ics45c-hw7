@@ -85,4 +85,11 @@ public:
         return buf[index];
     }
 
+    template<typename Fn>
+    void fill_with_fn(Fn fn) {
+        for (int i = 0; i < len; ++i) {
+            buf[i] = fn(i);
+        }
+    }
+
 }
