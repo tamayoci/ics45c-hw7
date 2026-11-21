@@ -23,7 +23,9 @@ public:
         return data[row];
     }
 
-
+    const Array<T>& operator[](int row) const {
+        return data[row];
+    }
 
 }
 
