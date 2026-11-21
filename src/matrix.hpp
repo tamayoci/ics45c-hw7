@@ -27,6 +27,10 @@ public:
         return data[row];
     }
 
+    int num_rows() const {
+        return rows;
+    }
+
 }
 
 #endif
