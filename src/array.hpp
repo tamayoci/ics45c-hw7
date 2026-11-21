@@ -47,5 +47,12 @@ public:
         }
         return *this;
     }
-    
+
+    Array& operator=(Array&& other) noexcept {
+        if (this != &other) {
+            swap(*this, other);
+        }
+        return *this;
+    }
+
 }
