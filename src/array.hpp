@@ -20,6 +20,15 @@ public:
         buf{new T[len]} {
     }
 
+    Array(const Array& other)
+        : len{other.len},
+          buf{new T[other.len]} {
+        for (int i = 0; i < len; ++i) {
+            buf[i] = other.buf[i];
+        }
+    }
+
+    
 
 
 }
