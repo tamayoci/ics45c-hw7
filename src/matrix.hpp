@@ -19,6 +19,10 @@ public:
         }
     }
 
+    Array<T>& operator[](int row) {
+        return data[row];
+    }
+
 
 
 }
