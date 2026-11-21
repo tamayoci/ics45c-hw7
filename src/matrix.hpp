@@ -50,6 +50,25 @@ public:
         }
     }
 
+private:
+    int rows, cols;
+    Array<Array<T>> data;
+};
+
+template<typename T>
+std::ostream& operator<<(std::ostream& out, const Matrix<T>& matrix) {
+    for (int r = 0; r < matrix.num_rows(); ++r) {
+        out << matrix[r] << '\n';
+    }
+    return out;
+}
+
+template<typename T>
+std::istream& operator>>(std::istream& in, Matrix<T>& matrix) {
+    for (int r = 0; r < matrix.num_rows(); ++r) {
+        in >> matrix[r];
+    }
+    return in;
 }
 
 #endif
