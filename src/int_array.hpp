@@ -33,7 +33,10 @@ public:
     // TODO Step 5: friend void swap(Array& lhs, Array& rhs) noexcept
     // TODO Step 5: copy assignment
     // TODO Step 5: move assignment
-    // TODO Step 4: destructor
+    
+    ~Array() {
+        delete[] buf;
+    }
 
     int length() const {
         return len;
