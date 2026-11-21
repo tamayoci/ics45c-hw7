@@ -35,6 +35,12 @@ public:
         return cols;
     }
 
+    void fill(const T& val) {
+        for (int i = 0; i < rows; ++i) {
+            data[i].fill(val);
+        }
+    }
+
 }
 
 #endif
